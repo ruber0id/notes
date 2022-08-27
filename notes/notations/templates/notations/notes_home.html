@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Notes | All notes{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>All notes</h1>
+    {% if notes %}
+        {% for note in notes %}
+            <div class="note">
+                <h3>{{ note.title }}</h3>
+                <p>{{ note.header }}</p>
+                <time class="entry-date" datetime="{{ note.date_added}}">{{ note.date_added|date:'b d, Y' }}</time>
+            </div>
+        {% endfor%}
+    {% else %}
+        <p>You have no notes</p>
+    {% endif %}
+</div>
+{% endblock %}

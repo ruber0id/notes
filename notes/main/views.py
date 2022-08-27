@@ -1,5 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 def index(request):
-    return HttpResponse('<h4>Hello from Notes app<h4>')
+    data = {
+        'title': 'Notes | Main page'
+    }
+    return render(request, 'main/index.html', data)
+
+
+def about(request):
+    data = {
+        'title': 'Notes | About page'
+    }
+    return render(request, 'main/about.html', data)
